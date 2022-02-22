@@ -1,0 +1,16 @@
+upload-logs-to-elastic:
+  runs-on: ubuntu-latest
+  needs: run-demo-app
+  if: always()
+  steps:
+  - name: Upload GitHub Action workflows logs to elastic
+    uses: shahargl/upload-github-workflow-logs-to-elastic@1.0.13
+    with:
+      github_token: "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"
+      github_org: "Muralikrishna-Shivadi"
+      github_repository: "elasticsearch"
+      github_run_id: "${{ github.run_id }}"
+      elastic_host: "https://sample1.kb.us-east-1.aws.found.io:9243"
+      elastic_api_key_id: "QhdSIn8BOIEYbNgnYDJ4"
+      elastic_api_key: "EN7xiw5IQbih7KhGAodZcQ"
+      elastic_index: "ci-cd"
