@@ -9,7 +9,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         submodules: 'recursive'
-        token: ${{ secrets.GITHUB }}
+        token: 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
     - name: Set up Python 3.7.8
       uses: actions/setup-python@v2
       with:
